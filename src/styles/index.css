@@ -110,3 +110,8 @@ button:focus-visible {
   padding: 0;
 }
 
+img, input,
+select {
+  width: 100%;
+}
+
