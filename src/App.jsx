@@ -1,10 +1,14 @@
 import Header from './components/Header/Header';
-import './assets/fonts/fonts.css';
+import Edit from './components/Edit/Edit';
+import './styles/index.css';
+import './styles/normalize.css';
+import './styles/variables.css';
 
 const App = () => {
   return (
-    <div style={{ fontFamily: 'Gilroy'}}>
+    <div>
       <Header />
+      <Edit />
     </div>
   );
 };

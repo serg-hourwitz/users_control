@@ -69,49 +69,11 @@ button:focus-visible {
 
 
 
-:root {
-  /* fonts */
-  --f-main: "Gilroy, sans-serif";
 
-  --fw-reg: 400;
-  --fw-med: 500;
-  --fw-semibold: 600;
-  --fw-bold: 700;
-
-  --fs-primary: 16px;
-  --fs-extra: 56px;
-  --fs-large: 48px;
-  --fs-big: 40px;
-  --fs-norm: 28px;
-  --fs-sub: 24px;
-  --fs-less: 20px;
-  --fs-small: 18px;
-  --fs-extra-small: 14px;
-
-  /* colors */
-  --c-black: #000000;
-  --c-white: #000000;
-  --c-gray1: #3A3A3A;
-  --c-gray2: #616161;
-  --c-gray3: #898989;
-  --c-gray4: #B0B0B0;
-  --c-gray5: #D8D8D8;
-  --c-quarter-spanish-white: #F9F1E7;
-  --c-bianca: #FCF8F3;
-  --c-primary: #E89F71;
-  --c-light-bg: #F4F5F7;
-  --c-red-accents: #E97171; 
-  --c-green-accents: #2EC1AC;
-}
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-img, input,
-select {
-  width: 100%;
 }
 

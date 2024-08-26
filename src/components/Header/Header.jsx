@@ -1,9 +1,18 @@
+import { Button } from '@mui/material';
+import styles from './Header.module.css';
 
 const Header = () => {
   return (
-    <>
-      <p>Header</p>
-    </>
+    <div className={styles.header}>
+      <div className={styles.buttons}>
+        <Button variant="contained" style={{ width: 200, height: 48 }}>
+          Edit Users
+        </Button>
+        <Button variant="contained" style={{ width: 200, height: 48 }}>
+          Users
+        </Button>
+      </div>
+    </div>
   );
 };
 

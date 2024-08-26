@@ -1,0 +1,27 @@
+:root {
+  /* fonts */
+  --f-primary: "Rubik";
+  --f-secondary: "Karla";
+
+  --fw-light: 300;
+  --fw-reg: 400;
+  --fw-med: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  --fs-primary: 16px;
+  --fs-extra: 56px;
+  --fs-large: 48px;
+  --fs-big: 40px;
+  --fs-norm: 28px;
+  --fs-sub: 24px;
+  --fs-less: 20px;
+  --fs-small: 18px;
+  --fs-extra-small: 14px;
+
+  /* colors */
+  --c-black: #000000;
+  --c-white: #ffffff;
+  --c-explosive-grey: #C4C4C4;
+  --c-script-ink: #5E626B;
+}                                  
