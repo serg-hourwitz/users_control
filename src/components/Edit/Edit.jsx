@@ -82,7 +82,7 @@ const Edit = () => {
           >
             Undo
           </Button>
-          <Button variant="contained" color="success" style={{ width: 200 }}>
+          <Button variant="outlined" color="success" style={{ width: 200 }}>
             Save
           </Button>
         </div>

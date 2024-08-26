@@ -5,10 +5,10 @@ const Header = () => {
   return (
     <div className={styles.header}>
       <div className={styles.buttons}>
-        <Button variant="contained" style={{ width: 200, height: 48 }}>
+        <Button variant="outlined" style={{ width: 200, height: 48 }}>
           Edit Users
         </Button>
-        <Button variant="contained" style={{ width: 200, height: 48 }}>
+        <Button variant="outlined" style={{ width: 200, height: 48 }}>
           Users
         </Button>
       </div>
