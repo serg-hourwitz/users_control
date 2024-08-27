@@ -1,11 +1,9 @@
-import {
-  Button,
-  TextField,
-  MenuItem,
-  Select,
-  InputLabel,
-  FormControl,
-} from '@mui/material';
+import Country from '../Countries/Countries';
+import Department from '../Department/Department';
+import Status from '../Status/Status';
+import User from '../User/User';
+import Input from '../Input/Input';
+import { Button } from '@mui/material';
 import styles from './Edit.module.css';
 
 const Edit = () => {
@@ -13,63 +11,16 @@ const Edit = () => {
     <div className={styles.wrapper}>
       <h2 className={styles.title}>Edit Users</h2>
       <form className={styles.form}>
-        <FormControl style={{ width: 500, marginBottom: 60 }} margin="normal">
-          <InputLabel id="user-select-label">User</InputLabel>
-          <Select labelId="user-select-label" id="user-select">
-            <MenuItem value="">
-              <em>None</em>
-            </MenuItem>
-            {/* Add actual user options here */}
-          </Select>
-        </FormControl>
-
+        <User />
         <h3 className={styles.subtitle}>User Information</h3>
         <div className={styles.info}>
-          <TextField
-            style={{ width: 500, marginRight: 80, marginBottom: 80 }}
-            margin="normal"
-            variant="outlined"
-            placeholder="Full Name"
-          />
+          <Input sx={{ width: 500 }} />
 
-          <FormControl style={{ width: 500 }} margin="normal">
-            <InputLabel id="department-select-label">Department</InputLabel>
-            <Select labelId="department-select-label" id="department-select">
-              <MenuItem value="">
-                <em>None</em>
-              </MenuItem>
-              <MenuItem value="IT">Digital Marketing</MenuItem>
-              <MenuItem value="HR">HR</MenuItem>
-              <MenuItem value="Finance">Finance</MenuItem>
-            </Select>
-          </FormControl>
+          <Department label="Department" sx={{ width: 500 }} />
 
-          <FormControl style={{ width: 500, marginRight: 80 }} margin="normal">
-            <InputLabel id="country-select-label"> Country</InputLabel>
-            <Select labelId="country-select-label" id="country-select">
-              <MenuItem value="">
-                <em>None</em>
-              </MenuItem>
-              <MenuItem value="USA">USA</MenuItem>
-              <MenuItem value="Canada">Canada</MenuItem>
-              <MenuItem value="Germany">Germany</MenuItem>
-              <MenuItem value="France">France</MenuItem>
-              <MenuItem value="UK">UK</MenuItem>
-              <MenuItem value="Australia">Australia</MenuItem>
-              <MenuItem value="India">India</MenuItem>
-              <MenuItem value="Japan">Japan</MenuItem>
-              <MenuItem value="China">China</MenuItem>
-              <MenuItem value="Brazil">Brazil</MenuItem>
-            </Select>
-          </FormControl>
+          <Country label="Country" sx={{ width: 500 }} />
 
-          <FormControl style={{ width: 500 }} margin="normal">
-            <InputLabel id="status-select-label">Status</InputLabel>
-            <Select labelId="status-select-label" id="status-select">
-              <MenuItem value="active">Active</MenuItem>
-              <MenuItem value="inactive">Inactive</MenuItem>
-            </Select>
-          </FormControl>
+          <Status label="Status" sx={{ width: 500 }} />
         </div>
       </form>
 

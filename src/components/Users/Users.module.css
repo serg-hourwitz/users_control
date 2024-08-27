@@ -1,0 +1,38 @@
+.wrapper {
+  max-width: 1240px;
+  margin: 0 auto;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  padding-top: 60px;
+  border: 1px solid var(--c-black);
+}
+
+.title {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: var(--f-secondary);
+  font-weight: var(--fw-med);
+  font-size: var(--fs-sub);
+  color: var(--c-black);
+  letter-spacing: 6px;
+  padding-bottom: 80px;
+}
+
+
+.form {
+  width: 1080px;
+  margin: 0 auto;
+  margin-bottom: 80px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dustbin {
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  margin-left: 20px;
+  border: 1px solid var(--c-explosive-grey);
+  cursor: pointer;
+}
