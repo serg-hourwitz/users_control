@@ -19,19 +19,27 @@
 }
 
 
-.form {
+.container {
   width: 1080px;
   margin: 0 auto;
   margin-bottom: 80px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form {
+  width: 100%;
+  display: flex;
   align-items: center;
   gap: 12px;
+  margin-bottom: 40px;
 }
 
 .dustbin {
-  width: 48px;
-  height: 48px;
-  padding: 12px;
+  width: 56px;
+  height: 56px;
+  padding: 15px;
   margin-left: 20px;
   border: 1px solid var(--c-explosive-grey);
   cursor: pointer;

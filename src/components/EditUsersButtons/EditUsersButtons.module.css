@@ -1,0 +1,5 @@
+.buttons {
+  display: flex;
+  margin-left: auto;
+  gap: 20px;
+}

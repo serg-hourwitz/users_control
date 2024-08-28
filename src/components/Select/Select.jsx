@@ -26,5 +26,4 @@ const CustomSelect = ({ value, label, options, onChange, sx, ...props }) => {
   );
 };
 
-// Default export
 export default CustomSelect;

@@ -1,22 +1,25 @@
-import {
-  MenuItem,
-  Select,
-  InputLabel,
-  FormControl,
-} from '@mui/material';
+import CustomSelect from '../Select/Select';
 
-const User = () => {
+export default function User({
+  value,
+  onChange,
+  label = '',
+  sx,
+  options,
+}) {
+  const defaultOptions = [
+    { value: '', label: <em>None</em> },
+  ];
+
   return (
-    <FormControl style={{ width: 500, marginBottom: 60 }} margin="normal">
-      <InputLabel id="user-select-label">User</InputLabel>
-      <Select labelId="user-select-label" id="user-select">
-        <MenuItem value="">
-          <em>None</em>
-        </MenuItem>
-        {/* Add actual user options here */}
-      </Select>
-    </FormControl>
+    <div>
+      <CustomSelect
+        value={value}
+        label={label}
+        options={options || defaultOptions}
+        onChange={onChange}
+        sx={sx}
+      />
+    </div>
   );
-};
-
-export default User;
+}

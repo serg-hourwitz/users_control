@@ -3,7 +3,7 @@ import Department from '../Department/Department';
 import Status from '../Status/Status';
 import User from '../User/User';
 import Input from '../Input/Input';
-import { Button } from '@mui/material';
+import EditUsersButtons from '../EditUsersButtons/EditUsersButtons';
 import styles from './Edit.module.css';
 
 const Edit = () => {
@@ -11,32 +11,21 @@ const Edit = () => {
     <div className={styles.wrapper}>
       <h2 className={styles.title}>Edit Users</h2>
       <form className={styles.form}>
-        <User />
+        <User label="User" sx={{ width: 500, m: 0 }} />
         <h3 className={styles.subtitle}>User Information</h3>
         <div className={styles.info}>
-          <Input sx={{ width: 500 }} />
+          <Input sx={{ width: 500, m: 0 }} />
 
-          <Department label="Department" sx={{ width: 500 }} />
+          <Department label="Department" sx={{ width: 500, m: 0 }} />
 
-          <Country label="Country" sx={{ width: 500 }} />
+          <Country label="Country" sx={{ width: 500, m: 0 }} />
 
-          <Status label="Status" sx={{ width: 500 }} />
+          <Status label="Status" sx={{ width: 500, m: 0 }} />
         </div>
       </form>
 
       <div className={styles.footer}>
-        <div className={styles.buttons}>
-          <Button
-            variant="outlined"
-            color="error"
-            style={{ width: 100, height: 48 }}
-          >
-            Undo
-          </Button>
-          <Button variant="outlined" color="success" style={{ width: 200 }}>
-            Save
-          </Button>
-        </div>
+        <EditUsersButtons />
       </div>
     </div>
   );

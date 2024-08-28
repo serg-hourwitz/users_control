@@ -30,6 +30,7 @@
   font-size: var(--fs-less);
   letter-spacing: .2px;
   color: var(--c-black);
+  margin-top: 40px;
   margin-bottom: 40px;
 }
 
@@ -40,8 +41,9 @@
   margin-bottom: 80px;
 }
 
-.buttons {
-  display: flex;
-  margin-left: auto;
-  gap: 20px;
+.info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 80px;
+  row-gap: 60px;
 }
