@@ -1,7 +1,7 @@
 import CustomSelect from '../Select/Select';
 
 export default function Department({
-  value,
+  value = '',
   onChange,
   label = '',
   sx,

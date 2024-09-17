@@ -1,7 +1,7 @@
 import CustomSelect from '../Select/Select';
 
 export default function Country({
-  value,
+  value = '', // Default to empty string if undefined
   onChange,
   label = '',
   sx,

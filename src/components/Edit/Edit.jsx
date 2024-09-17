@@ -14,12 +14,9 @@ const Edit = () => {
         <User label="User" sx={{ width: 500, m: 0 }} />
         <h3 className={styles.subtitle}>User Information</h3>
         <div className={styles.info}>
-          <Input sx={{ width: 500, m: 0 }} />
-
+          <Input sx={{ width: 500, m: 0 }} placeholder="Enter full name" />
           <Department label="Department" sx={{ width: 500, m: 0 }} />
-
           <Country label="Country" sx={{ width: 500, m: 0 }} />
-
           <Status label="Status" sx={{ width: 500, m: 0 }} />
         </div>
       </form>

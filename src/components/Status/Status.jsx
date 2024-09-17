@@ -1,12 +1,6 @@
 import CustomSelect from '../Select/Select';
 
-export default function Status({
-  value,
-  onChange,
-  label = '',
-  sx,
-  options,
-}) {
+export default function Status({ value = '', onChange, label = '', sx, options }) {
   const defaultOptions = [
     { value: '', label: <em>None</em> },
     { value: 'Active', label: 'Active' },
