@@ -60,7 +60,14 @@ export default function BasicModal({ open, handleClose, addUser }) {
           id="modal-modal-title"
           variant="h6"
           component="h2"
-          sx={{ textAlign: 'center', marginBottom: 6, letterSpacing: 6 }}
+          sx={{
+            textAlign: 'center',
+            marginBottom: 6,
+            letterSpacing: 6,
+            fontFamily: 'var(--f-secondary)',
+            fontSize: 'var(--fw-sub)',
+            fontWeight: 'var(--fs-med)',
+          }}
         >
           ADD USER
         </Typography>
@@ -94,14 +101,28 @@ export default function BasicModal({ open, handleClose, addUser }) {
           <Buttons
             variant="outlined"
             color="error"
-            sx={{ width: 100, height: 48 }}
+            sx={{
+              width: 100,
+              height: 48,
+              fontFamily: 'var(--f-primary)',
+              fontSize: 'var(--fw-light)',
+              fontWeight: 'var(--fs-extra-small)',
+              textTransform: 'none',
+            }}
             title="Cancel"
             onClick={handleClose}
           />
           <Buttons
             variant="outlined"
             color="success"
-            sx={{ width: 150, height: 48 }}
+            sx={{
+              width: 150,
+              height: 48,
+              fontFamily: 'var(--f-primary)',
+              fontSize: 'var(--fw-light)',
+              fontWeight: 'var(--fs-extra-small)',
+              textTransform: 'none',
+            }}
             title="Add"
             onClick={handleAddUser}
           />

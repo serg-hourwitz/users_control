@@ -7,14 +7,28 @@ const Header = ({ onEditClick, onUsersClick }) => {
       <div className={styles.buttons}>
         <Button
           variant="outlined"
-          style={{ width: 200, height: 48 }}
+          style={{
+            width: 200,
+            height: 48,
+            fontFamily: 'var(--f-primary)',
+            fontSize: 'var(--fs-less)',
+            fontWeight: 'var(--fw-light)',
+            textTransform: 'none',
+          }}
           onClick={onEditClick}
         >
           Edit Users
         </Button>
         <Button
           variant="outlined"
-          style={{ width: 200, height: 48 }}
+          style={{
+            width: 200,
+            height: 48,
+            fontFamily: 'var(--f-primary)',
+            fontSize: 'var(--fs-less)',
+            fontWeight: 'var(--fw-light)',
+            textTransform: 'none',
+          }}
           onClick={onUsersClick}
         >
           Users

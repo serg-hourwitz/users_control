@@ -19,11 +19,56 @@ export default function BasicTable({ users, setUsers }) {
       <Table sx={{ minWidth: 650 }} aria-label="user table">
         <TableHead>
           <TableRow>
-            <TableCell>Full Name</TableCell>
-            <TableCell align="right">Department</TableCell>
-            <TableCell align="right">Country</TableCell>
-            <TableCell align="right">Status</TableCell>
-            <TableCell align="right">Actions</TableCell>
+            <TableCell
+              sx={{
+                fontFamily: 'var(--f-secondary)',
+                fontWeight: 'var(--fw-bold)',
+                fontSize: 'var(--fs-less)',
+              }}
+            >
+              Full Name
+            </TableCell>
+            <TableCell
+              align="left"
+              sx={{
+                fontFamily: 'var(--f-secondary)',
+                fontWeight: 'var(--fw-bold)',
+                fontSize: 'var(--fs-less)',
+              }}
+            >
+              Department
+            </TableCell>
+            <TableCell
+              align="left"
+              sx={{
+                fontFamily: 'var(--f-secondary)',
+                fontWeight: 'var(--fw-bold)',
+                fontSize: 'var(--fs-less)',
+              }}
+            >
+              Country
+            </TableCell>
+            <TableCell
+              align="center"
+              sx={{
+                fontFamily: 'var(--f-secondary)',
+                fontWeight: 'var(--fw-bold)',
+                fontSize: 'var(--fs-less)',
+              }}
+            >
+              Status
+            </TableCell>
+            <TableCell
+              align="right"
+              sx={{
+                fontFamily: 'var(--f-secondary)',
+                fontWeight: 'var(--fw-bold)',
+                fontSize: 'var(--fs-less)',
+                color: 'var(--c-white)',
+              }}
+            >
+              Actions
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -36,13 +81,48 @@ export default function BasicTable({ users, setUsers }) {
           ) : (
             users.map((user, index) => (
               <TableRow key={index}>
-                <TableCell component="th" scope="row">
+                <TableCell
+                  component="th"
+                  scope="row"
+                  sx={{
+                    fontFamily: 'var(--f-primary)',
+                    fontWeight: 'var(--fw - reg)',
+                    fontSize: 'var(--fs-less)',
+                  }}
+                >
                   {user.name}
                 </TableCell>
-                <TableCell align="right">{user.department}</TableCell>
-                <TableCell align="right">{user.country}</TableCell>
-                <TableCell align="right">{user.status}</TableCell>
-                <TableCell align="right">
+                <TableCell
+                  align="left"
+                  sx={{
+                    fontFamily: 'var(--f-primary)',
+                    fontWeight: 'var(--fw-light)',
+                    fontSize: 'var(--fs-less)',
+                  }}
+                >
+                  {user.department}
+                </TableCell>
+                <TableCell
+                  align="rig"
+                  sx={{
+                    fontFamily: 'var(--f-primary)',
+                    fontWeight: 'var(--fw-light)',
+                    fontSize: 'var(--fs-less)',
+                  }}
+                >
+                  {user.country}
+                </TableCell>
+                <TableCell
+                  align="center"
+                  sx={{
+                    fontFamily: 'var(--f-primary)',
+                    fontWeight: 'var(--fw-light)',
+                    fontSize: 'var(--fs-less)',
+                  }}
+                >
+                  {user.status}
+                </TableCell>
+                <TableCell align="center">
                   <DustBin onClick={() => deleteUser(index)} />
                 </TableCell>
               </TableRow>

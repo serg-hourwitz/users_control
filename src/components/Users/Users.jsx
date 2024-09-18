@@ -71,7 +71,15 @@ const Users = () => {
           <Buttons
             variant="outlined"
             color="success"
-            sx={{ width: 150, height: 56, marginLeft: 'auto' }}
+            sx={{
+              width: 150,
+              height: 56,
+              marginLeft: 'auto',
+              fontFamily: 'var(--f-primary)',
+              fontSize: 'var(--fs-less)',
+              fontWeight: 'var(--fw-light)',
+              textTransform: 'none',
+            }}
             title="Add User"
             onClick={handleOpenModal} // Open modal on button click
           />

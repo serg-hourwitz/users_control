@@ -7,14 +7,28 @@ const EditUsersButtons = ({ onUndo, onSave }) => {
       <Buttons
         variant="outlined"
         color="error"
-        sx={{ width: 100, height: 48 }}
+        sx={{
+          width: 100,
+          height: 48,
+          fontSize: 'var(--fs-less)',
+          fontWeight: 'var(--fw-light)',
+          textTransform: 'none',
+          fontFamily: 'var(--f-primary)',
+        }}
         title="Undo"
         onClick={onUndo} // Attach the Undo handler
       />
+
       <Buttons
         variant="outlined"
         color="success"
-        sx={{ width: 200 }}
+        sx={{
+          width: 200,
+          fontSize: 'var(--fs-less)',
+          fontWeight: 'var(--fw-light)',
+          textTransform: 'none',
+          fontFamily: 'var(--f-primary)',
+        }}
         title="Save"
         onClick={onSave} // Attach the Save handler
       />

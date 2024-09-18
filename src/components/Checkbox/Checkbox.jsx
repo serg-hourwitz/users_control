@@ -45,7 +45,16 @@ const MultipleSelectCheckmarks = forwardRef((props, ref) => {
   return (
     <div>
       <FormControl sx={{ m: 0, width: 220 }}>
-        <InputLabel id="demo-multiple-checkbox-label">Selected</InputLabel>
+        <InputLabel
+          id="demo-multiple-checkbox-label"
+          sx={{
+            fontFamily: 'var(--f-primary)',
+            fontSize: 'var(--fs-less)',
+            fontWeight: 'var(--fw-reg)',
+          }}
+        >
+          Selected
+        </InputLabel>
         <Select
           labelId="demo-multiple-checkbox-label"
           id="demo-multiple-checkbox"

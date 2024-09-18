@@ -14,7 +14,16 @@ const CustomSelect = ({
 }) => {
   return (
     <FormControl sx={{ m: 1, minWidth: 220, ...sx }}>
-      <InputLabel id={`${label}-label`}>{label}</InputLabel>
+      <InputLabel
+        id={`${label}-label`}
+        sx={{
+          fontFamily: 'var(--f-primary)',
+          fontSize: 'var(--fs-less)',
+          fontWeight: 'var(--fw-reg)',
+        }}
+      >
+        {label}
+      </InputLabel>
       <Select
         labelId={`${label}-label`}
         id={`${label}-select`}
