@@ -30,10 +30,18 @@ export default function BasicModal({ open, handleClose, addUser }) {
   const [country, setCountry] = useState('');
   const [status, setStatus] = useState('');
 
+  const resetForm = () => {
+    setName('');
+    setDepartment('');
+    setCountry('');
+    setStatus('');
+  };
+
   const handleAddUser = () => {
     if (name && department && country && status) {
       const user = { name, department, country, status };
       addUser(user); // Call the parent component's addUser function
+      resetForm(); // Clear the form fields after user is added
       handleClose(); // Close modal after user is added
     } else {
       console.log('Please fill all fields');
@@ -42,7 +50,7 @@ export default function BasicModal({ open, handleClose, addUser }) {
 
   return (
     <Modal
-      open={open}
+      open={open} // Ensure open prop is received here
       onClose={handleClose}
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"

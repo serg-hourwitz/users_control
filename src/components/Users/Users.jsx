@@ -5,12 +5,16 @@ import Status from '../Status/Status';
 import BasicTable from '../Table/Table';
 import DustBin from '../DustBin/DustBin';
 import BasicModal from '../Modal/Modal'; // Import the Modal component
-import { useState, useEffect } from 'react'; // Import useState and useEffect
+import { useState, useRef, useEffect } from 'react'; // Import hooks
 import styles from './Users.module.css';
 
 const Users = () => {
   const [isModalOpen, setIsModalOpen] = useState(false); // State to control modal visibility
   const [users, setUsers] = useState([]);
+  const [selectedCountry, setSelectedCountry] = useState(''); // State for Country
+  const [selectedStatus, setSelectedStatus] = useState(''); // State for Status
+
+  const multipleSelectRef = useRef(null); // Ref for MultipleSelectCheckmarks
 
   // Load users from localStorage when the component mounts
   useEffect(() => {
@@ -36,18 +40,34 @@ const Users = () => {
     setIsModalOpen(true); // Open modal when button is clicked
   };
 
+  const handleReset = () => {
+    setSelectedCountry(''); // Clear country selection
+    setSelectedStatus(''); // Clear status selection
+    if (multipleSelectRef.current) {
+      multipleSelectRef.current.clearSelections(); // Clear multiple select checkmarks
+    }
+  };
+
   return (
     <div className={styles.wrapper}>
       <h2 className={styles.title}>USERS</h2>
       <div className={styles.container}>
         <form className={styles.form}>
-          <MultipleSelectCheckmarks />
-          <Country label="Select country" />
-          <Status label="All Statuses" />
+          <MultipleSelectCheckmarks ref={multipleSelectRef} />{' '}
+          {/* Ref to clear selections */}
+          <Country
+            label="Select country"
+            value={selectedCountry}
+            onChange={(e) => setSelectedCountry(e.target.value)}
+          />
+          <Status
+            label="All Statuses"
+            value={selectedStatus}
+            onChange={(e) => setSelectedStatus(e.target.value)}
+          />
           <div className={styles.dustbinBlock}>
-            <DustBin />
+            <DustBin onClick={handleReset} /> {/* Reset selections on click */}
           </div>
-
           <Buttons
             variant="outlined"
             color="success"
@@ -59,7 +79,6 @@ const Users = () => {
 
         <BasicTable users={users} setUsers={setUsers} />
 
-        {/* Pass modal state and handlers to the BasicModal component */}
         <BasicModal
           open={isModalOpen}
           handleClose={() => setIsModalOpen(false)}

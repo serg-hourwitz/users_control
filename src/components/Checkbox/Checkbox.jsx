@@ -6,6 +6,7 @@ import FormControl from '@mui/material/FormControl';
 import ListItemText from '@mui/material/ListItemText';
 import Select from '@mui/material/Select';
 import Checkbox from '@mui/material/Checkbox';
+import { forwardRef, useImperativeHandle } from 'react';
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -20,7 +21,8 @@ const MenuProps = {
 
 const names = ['Digital Marketing', 'HR', 'Finance'];
 
-export default function MultipleSelectCheckmarks() {
+// Use forwardRef to pass a ref to the component
+const MultipleSelectCheckmarks = forwardRef((props, ref) => {
   const [personName, setPersonName] = React.useState([]);
 
   const handleChange = (event) => {
@@ -33,6 +35,13 @@ export default function MultipleSelectCheckmarks() {
     );
   };
 
+  // UseImperativeHandle allows the parent to access the method
+  useImperativeHandle(ref, () => ({
+    clearSelections() {
+      setPersonName([]); // Clear the selected items
+    },
+  }));
+
   return (
     <div>
       <FormControl sx={{ m: 0, width: 220 }}>
@@ -44,7 +53,7 @@ export default function MultipleSelectCheckmarks() {
           value={personName}
           onChange={handleChange}
           input={<OutlinedInput label="Selected" />}
-          renderValue={() => ` Selected (${personName.length})`}
+          renderValue={() => `Selected (${personName.length})`}
           MenuProps={MenuProps}
         >
           {names.map((name) => (
@@ -57,4 +66,6 @@ export default function MultipleSelectCheckmarks() {
       </FormControl>
     </div>
   );
-}
+});
+
+export default MultipleSelectCheckmarks;
