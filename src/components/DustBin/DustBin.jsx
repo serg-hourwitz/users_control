@@ -2,7 +2,7 @@ const DustBin = ({ onClick }) => {
   return (
     <svg
       onClick={onClick} // Add onClick handler to trigger deletion
-      style={{ cursor: 'pointer' }} // Make it clear it's clickable
+      style={{ cursor: 'pointer'}} // Make it clear it's clickable
       width="24"
       height="24"
       viewBox="0 0 24 24"

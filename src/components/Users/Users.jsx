@@ -9,7 +9,7 @@ import { useState, useEffect } from 'react'; // Import useState and useEffect
 import styles from './Users.module.css';
 
 const Users = () => {
-  const [isModalOpen, setIsModalOpen] = useState(true); // State to control modal visibility
+  const [isModalOpen, setIsModalOpen] = useState(false); // State to control modal visibility
   const [users, setUsers] = useState([]);
 
   // Load users from localStorage when the component mounts
@@ -32,10 +32,9 @@ const Users = () => {
     setIsModalOpen(false); // Close modal after adding the user
   };
 
-  // Ensure modal is open when the page loads
-  useEffect(() => {
-    setIsModalOpen(true);
-  }, []);
+  const handleOpenModal = () => {
+    setIsModalOpen(true); // Open modal when button is clicked
+  };
 
   return (
     <div className={styles.wrapper}>
@@ -45,10 +44,17 @@ const Users = () => {
           <MultipleSelectCheckmarks />
           <Country label="Select country" />
           <Status label="All Statuses" />
-
-          <div className={styles.dustbin}>
+          <div className={styles.dustbinBlock}>
             <DustBin />
           </div>
+
+          <Buttons
+            variant="outlined"
+            color="success"
+            sx={{ width: 150, height: 56, marginLeft: 'auto' }}
+            title="Add User"
+            onClick={handleOpenModal} // Open modal on button click
+          />
         </form>
 
         <BasicTable users={users} setUsers={setUsers} />

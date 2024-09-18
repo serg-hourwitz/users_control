@@ -18,7 +18,6 @@
   padding-bottom: 80px;
 }
 
-
 .container {
   width: 1080px;
   margin: 0 auto;
@@ -36,7 +35,7 @@
   margin-bottom: 40px;
 }
 
-.dustbin {
+.dustbinBlock {
   width: 56px;
   height: 56px;
   padding: 15px;
