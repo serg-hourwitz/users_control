@@ -22,19 +22,22 @@ const style = {
   paddingBottom: 4,
   paddingLeft: 6,
   paddingRight: 6,
+  minHeight: 400, // Ensure consistent height
 };
 
-export default function BasicModal({ open, handleClose, addUser }) {
+const BasicModal = ({ open, handleClose, addUser }) => {
   const [name, setName] = useState('');
   const [department, setDepartment] = useState('');
   const [country, setCountry] = useState('');
   const [status, setStatus] = useState('');
+  const [showError, setShowError] = useState(false); // State to control error visibility
 
   const resetForm = () => {
     setName('');
     setDepartment('');
     setCountry('');
     setStatus('');
+    setShowError(false); // Reset error state when form is cleared
   };
 
   const handleAddUser = () => {
@@ -44,13 +47,13 @@ export default function BasicModal({ open, handleClose, addUser }) {
       resetForm(); // Clear the form fields after user is added
       handleClose(); // Close modal after user is added
     } else {
-      console.log('Please fill all fields');
+      setShowError(true); // Show error message if fields are not filled
     }
   };
 
   return (
     <Modal
-      open={open} // Ensure open prop is received here
+      open={open}
       onClose={handleClose}
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
@@ -65,38 +68,81 @@ export default function BasicModal({ open, handleClose, addUser }) {
             marginBottom: 6,
             letterSpacing: 6,
             fontFamily: 'var(--f-secondary)',
-            fontSize: 'var(--fw-sub)',
-            fontWeight: 'var(--fs-med)',
+            fontSize: 'var(--fs-sub)',
+            fontWeight: 'var(--fw-med)',
           }}
         >
           ADD USER
         </Typography>
+
         <div className={styles.form}>
           <Input
-            sx={{ width: 280, m: 0 }}
+            sx={{
+              width: 280,
+              m: 0,
+              '& .MuiInputBase-input::placeholder': {
+                fontSize: 'var(--fs-extra-small)',
+                fontWeight: 'var(--fw-reg)',
+                fontFamily: 'var(--f-primary)',
+              },
+            }}
+            InputLabelProps={{
+              sx: {
+                fontSize: 'var(--fs-extra-small)',
+                fontWeight: 'var(--fw-reg)',
+                fontFamily: 'var(--f-primary)',
+              },
+            }}
             value={name}
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => {
+              setName(e.target.value);
+              setShowError(false); // Hide error message when user types
+            }}
             placeholder="Enter full name"
           />
           <Department
             sx={{ width: 280, m: 0 }}
             label="Department"
             value={department || ''}
-            onChange={(e) => setDepartment(e.target.value)}
+            onChange={(e) => {
+              setDepartment(e.target.value);
+              setShowError(false); // Hide error message when user types
+            }}
           />
           <Country
             sx={{ width: 280, m: 0 }}
             label="Country"
             value={country || ''}
-            onChange={(e) => setCountry(e.target.value)}
+            onChange={(e) => {
+              setCountry(e.target.value);
+              setShowError(false); // Hide error message when user types
+            }}
           />
           <Status
             sx={{ width: 280, m: 0 }}
             label="Status"
             value={status || ''}
-            onChange={(e) => setStatus(e.target.value)}
+            onChange={(e) => {
+              setStatus(e.target.value);
+              setShowError(false); // Hide error message when user types
+            }}
           />
         </div>
+
+        {/* Error message section, hidden by default */}
+        <Typography
+          sx={{
+            visibility: showError ? 'visible' : 'hidden', // Toggle visibility based on state
+            color: 'red',
+            fontSize: 'var(--fs-extra-small)',
+            textAlign: 'center',
+            marginBottom: 2,
+            fontFamily: 'var(--f-primary)',
+          }}
+        >
+          Please fill all fields
+        </Typography>
+
         <div className={styles.buttons}>
           <Buttons
             variant="outlined"
@@ -110,7 +156,7 @@ export default function BasicModal({ open, handleClose, addUser }) {
               textTransform: 'none',
             }}
             title="Cancel"
-            onClick={handleClose}
+            onClick={resetForm}
           />
           <Buttons
             variant="outlined"
@@ -130,4 +176,6 @@ export default function BasicModal({ open, handleClose, addUser }) {
       </Box>
     </Modal>
   );
-}
+};
+
+export default BasicModal;

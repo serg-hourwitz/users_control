@@ -1,19 +1,19 @@
 import CustomSelect from '../Select/Select';
 
-export default function Country({
+const Country = ({
   value = '', // Default to empty string if undefined
   onChange,
   label = '',
   sx,
   options,
-}) {
+}) => {
   const defaultOptions = [
-    { value: '', label: <em>None</em> },
     { value: 'USA', label: 'USA' },
     { value: 'Canada', label: 'Canada' },
     { value: 'Germany', label: 'Germany' },
     { value: 'France', label: 'France' },
     { value: 'UK', label: 'UK' },
+    { value: 'Ukraine', label: 'Ukraine' },
     { value: 'Australia', label: 'Australia' },
     { value: 'India', label: 'India' },
     { value: 'Japan', label: 'Japan' },
@@ -33,3 +33,6 @@ export default function Country({
     </div>
   );
 }
+
+
+export default Country;

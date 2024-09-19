@@ -1,14 +1,13 @@
 import CustomSelect from '../Select/Select';
 
-export default function Department({
+const Department = ({
   value = '',
   onChange,
-  label = '',
+  label = 'Department',
   sx,
   options,
-}) {
+}) => {
   const defaultOptions = [
-    { value: '', label: <em>None</em> },
     { value: 'Digital Marketing', label: 'Digital Marketing' },
     { value: 'HR', label: 'HR' },
     { value: 'Finance', label: 'Finance' },
@@ -25,4 +24,6 @@ export default function Department({
       />
     </div>
   );
-}
+};
+
+export default Department;

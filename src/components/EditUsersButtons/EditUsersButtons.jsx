@@ -10,7 +10,7 @@ const EditUsersButtons = ({ onUndo, onSave }) => {
         sx={{
           width: 100,
           height: 48,
-          fontSize: 'var(--fs-less)',
+          fontSize: 'var(--fs-extra-small)',
           fontWeight: 'var(--fw-light)',
           textTransform: 'none',
           fontFamily: 'var(--f-primary)',
@@ -24,7 +24,7 @@ const EditUsersButtons = ({ onUndo, onSave }) => {
         color="success"
         sx={{
           width: 200,
-          fontSize: 'var(--fs-less)',
+          fontSize: 'var(--fs-extra-small)',
           fontWeight: 'var(--fw-light)',
           textTransform: 'none',
           fontFamily: 'var(--f-primary)',

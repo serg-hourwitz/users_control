@@ -4,8 +4,8 @@ import Buttons from '../Buttons/Buttons';
 import Status from '../Status/Status';
 import BasicTable from '../Table/Table';
 import DustBin from '../DustBin/DustBin';
-import BasicModal from '../Modal/Modal'; // Import the Modal component
-import { useState, useRef, useEffect } from 'react'; // Import hooks
+import BasicModal from '../Modal/Modal';  
+import { useState, useRef, useEffect } from 'react';  
 import styles from './Users.module.css';
 
 const Users = () => {
@@ -76,7 +76,7 @@ const Users = () => {
               height: 56,
               marginLeft: 'auto',
               fontFamily: 'var(--f-primary)',
-              fontSize: 'var(--fs-less)',
+              fontSize: 'var(--fs-extra-small)',
               fontWeight: 'var(--fw-light)',
               textTransform: 'none',
             }}

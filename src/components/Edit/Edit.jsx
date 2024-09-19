@@ -34,7 +34,8 @@ const Edit = () => {
   }, [selectedUser]);
 
   const handleUndo = () => {
-    // Clear the form fields
+    // Clear the form fields and deselect user
+    setSelectedUser(null);
     setName('');
     setDepartment('');
     setCountry('');
@@ -64,6 +65,7 @@ const Edit = () => {
             value: user.name,
             label: user.name,
           }))}
+          value={selectedUser ? selectedUser.name : ''} // Clear select when undo is clicked
           onChange={(e) => {
             const userName = e.target.value;
             const user = users.find((user) => user.name === userName);

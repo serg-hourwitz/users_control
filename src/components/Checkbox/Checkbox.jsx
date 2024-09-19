@@ -49,7 +49,7 @@ const MultipleSelectCheckmarks = forwardRef((props, ref) => {
           id="demo-multiple-checkbox-label"
           sx={{
             fontFamily: 'var(--f-primary)',
-            fontSize: 'var(--fs-less)',
+            fontSize: 'var(--fs-extra-small)',
             fontWeight: 'var(--fw-reg)',
           }}
         >

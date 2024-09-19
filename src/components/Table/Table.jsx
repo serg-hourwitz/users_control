@@ -7,7 +7,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import DustBin from '../DustBin/DustBin';
 
-export default function BasicTable({ users, setUsers }) {
+const BasicTable = ({ users, setUsers }) => {
   const deleteUser = (indexToDelete) => {
     const updatedUsers = users.filter((_, index) => index !== indexToDelete);
     setUsers(updatedUsers);
@@ -23,7 +23,7 @@ export default function BasicTable({ users, setUsers }) {
               sx={{
                 fontFamily: 'var(--f-secondary)',
                 fontWeight: 'var(--fw-bold)',
-                fontSize: 'var(--fs-less)',
+                fontSize: 'var(--fs-extra-small)',
               }}
             >
               Full Name
@@ -33,7 +33,7 @@ export default function BasicTable({ users, setUsers }) {
               sx={{
                 fontFamily: 'var(--f-secondary)',
                 fontWeight: 'var(--fw-bold)',
-                fontSize: 'var(--fs-less)',
+                fontSize: 'var(--fs-extra-small)',
               }}
             >
               Department
@@ -43,7 +43,7 @@ export default function BasicTable({ users, setUsers }) {
               sx={{
                 fontFamily: 'var(--f-secondary)',
                 fontWeight: 'var(--fw-bold)',
-                fontSize: 'var(--fs-less)',
+                fontSize: 'var(--fs-extra-small)',
               }}
             >
               Country
@@ -53,7 +53,7 @@ export default function BasicTable({ users, setUsers }) {
               sx={{
                 fontFamily: 'var(--f-secondary)',
                 fontWeight: 'var(--fw-bold)',
-                fontSize: 'var(--fs-less)',
+                fontSize: 'var(--fs-extra-small)',
               }}
             >
               Status
@@ -63,7 +63,7 @@ export default function BasicTable({ users, setUsers }) {
               sx={{
                 fontFamily: 'var(--f-secondary)',
                 fontWeight: 'var(--fw-bold)',
-                fontSize: 'var(--fs-less)',
+                fontSize: 'var(--fs-extra-small)',
                 color: 'var(--c-white)',
               }}
             >
@@ -87,7 +87,7 @@ export default function BasicTable({ users, setUsers }) {
                   sx={{
                     fontFamily: 'var(--f-primary)',
                     fontWeight: 'var(--fw - reg)',
-                    fontSize: 'var(--fs-less)',
+                    fontSize: 'var(--fs-extra-small)',
                   }}
                 >
                   {user.name}
@@ -97,17 +97,17 @@ export default function BasicTable({ users, setUsers }) {
                   sx={{
                     fontFamily: 'var(--f-primary)',
                     fontWeight: 'var(--fw-light)',
-                    fontSize: 'var(--fs-less)',
+                    fontSize: 'var(--fs-extra-small)',
                   }}
                 >
                   {user.department}
                 </TableCell>
                 <TableCell
-                  align="rig"
+                  align="left"
                   sx={{
                     fontFamily: 'var(--f-primary)',
                     fontWeight: 'var(--fw-light)',
-                    fontSize: 'var(--fs-less)',
+                    fontSize: 'var(--fs-extra-small)',
                   }}
                 >
                   {user.country}
@@ -117,7 +117,7 @@ export default function BasicTable({ users, setUsers }) {
                   sx={{
                     fontFamily: 'var(--f-primary)',
                     fontWeight: 'var(--fw-light)',
-                    fontSize: 'var(--fs-less)',
+                    fontSize: 'var(--fs-extra-small)',
                   }}
                 >
                   {user.status}
@@ -132,4 +132,6 @@ export default function BasicTable({ users, setUsers }) {
       </Table>
     </TableContainer>
   );
-}
+};
+
+export default BasicTable;

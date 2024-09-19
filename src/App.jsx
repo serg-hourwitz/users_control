@@ -1,9 +1,12 @@
+//* Base */
 import Header from './components/Header/Header';
 import Edit from './components/Edit/Edit';
 import Users from './components/Users/Users';
+/* Styles */
 import './styles/index.css';
 import './styles/normalize.css';
 import './styles/variables.css';
+/* hook */
 import { useState } from 'react';
 
 const App = () => {

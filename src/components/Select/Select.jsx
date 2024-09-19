@@ -10,6 +10,8 @@ const CustomSelect = ({
   options = [],
   onChange,
   sx,
+  labelStyles,
+  selectStyles,
   ...props
 }) => {
   return (
@@ -18,8 +20,9 @@ const CustomSelect = ({
         id={`${label}-label`}
         sx={{
           fontFamily: 'var(--f-primary)',
-          fontSize: 'var(--fs-less)',
+          fontSize: 'var(--fs-extra-small)',
           fontWeight: 'var(--fw-reg)',
+          ...labelStyles,
         }}
       >
         {label}
@@ -30,13 +33,15 @@ const CustomSelect = ({
         value={value}
         label={label}
         onChange={onChange}
+        sx={selectStyles}
         {...props}
       >
-        {options.length === 0 && (
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
-        )}
+        {/* Render 'None' as a MenuItem directly */}
+        <MenuItem value="">
+          <em>None</em>
+        </MenuItem>
+
+        {/* Render other options */}
         {options.map((option) => (
           <MenuItem key={option.value} value={option.value}>
             {option.label}

@@ -11,7 +11,7 @@ const Header = ({ onEditClick, onUsersClick }) => {
             width: 200,
             height: 48,
             fontFamily: 'var(--f-primary)',
-            fontSize: 'var(--fs-less)',
+            fontSize: 'var(--fs-extra-small)',
             fontWeight: 'var(--fw-light)',
             textTransform: 'none',
           }}
@@ -25,7 +25,7 @@ const Header = ({ onEditClick, onUsersClick }) => {
             width: 200,
             height: 48,
             fontFamily: 'var(--f-primary)',
-            fontSize: 'var(--fs-less)',
+            fontSize: 'var(--fs-extra-small)',
             fontWeight: 'var(--fw-light)',
             textTransform: 'none',
           }}
