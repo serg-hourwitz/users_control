@@ -33,7 +33,11 @@ const CustomSelect = ({
         value={value}
         label={label}
         onChange={onChange}
-        sx={selectStyles}
+        sx={{
+          fontFamily: 'var(--f-secondary)',
+          fontSize: 'var(--fs-extra-small)',
+          fontWeight: 'var(--fw-reg)',
+        }}
         {...props}
       >
         {/* Render 'None' as a MenuItem directly */}

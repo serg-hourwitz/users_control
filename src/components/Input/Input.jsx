@@ -1,6 +1,13 @@
 import { TextField } from '@mui/material';
 
-const Input = ({ sx, placeholder, value, onChange, InputLabelProps }) => {
+const Input = ({
+  sx,
+  placeholder,
+  value,
+  onChange,
+  InputLabelProps,
+  InputProps,
+}) => {
   return (
     <>
       <TextField
@@ -18,9 +25,18 @@ const Input = ({ sx, placeholder, value, onChange, InputLabelProps }) => {
             fontSize: 'var(--fs-extra-small)',
             fontWeight: 'var(--fw-reg)',
             fontFamily: 'var(--f-primary)',
-            ...InputLabelProps?.sx, // Merge custom sx if provided
+            ...InputLabelProps?.sx, 
           },
-          ...InputLabelProps, // Merge other InputLabelProps
+          ...InputLabelProps, 
+        }}
+        InputProps={{
+          sx: {
+            fontSize: 'var(--fs-extra-small)',
+            fontWeight: 'var(--fw-reg)',
+            fontFamily: 'var(--f-primary)',
+            ...InputProps?.sx, 
+          },
+          ...InputProps, 
         }}
       />
     </>

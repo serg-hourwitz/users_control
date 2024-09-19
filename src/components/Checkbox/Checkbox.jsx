@@ -64,6 +64,11 @@ const MultipleSelectCheckmarks = forwardRef((props, ref) => {
           input={<OutlinedInput label="Selected" />}
           renderValue={() => `Selected (${personName.length})`}
           MenuProps={MenuProps}
+          sx={{
+            fontFamily: 'var(--f-primary)',
+            fontSize: 'var(--fs-extra-small)',
+            fontWeight: 'var(--fw-reg)',
+          }}
         >
           {names.map((name) => (
             <MenuItem key={name} value={name}>
