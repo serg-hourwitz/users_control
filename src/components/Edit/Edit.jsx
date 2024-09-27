@@ -60,7 +60,13 @@ const Edit = () => {
       <form className={styles.form}>
         <User
           label="User"
-          sx={{ width: 500, m: 0 }}
+          sx={{
+            width: 500,
+            m: 0,
+            '@media (max-width: 1100px)': {
+              left: 'calc((100% - 500px) / 2)', // Apply this style only for max-width 1100px
+            },
+          }}
           options={users.map((user) => ({
             value: user.name,
             label: user.name,
