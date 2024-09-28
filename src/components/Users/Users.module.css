@@ -44,10 +44,11 @@
   padding: 15px;
   margin-left: 20px;
   border: 1px solid var(--c-explosive-grey);
+  border-radius: 4px;
   cursor: pointer;
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 980px) {
   .form {
     flex-direction: column;
     align-content: center;
