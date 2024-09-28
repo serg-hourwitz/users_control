@@ -1,0 +1,38 @@
+@media (max-width: 680px) {
+  .userTable {
+    display: block;
+    /* Включити блочний режим */
+  }
+
+  .userTable thead {
+    display: none;
+    /* Сховати заголовки таблиці */
+  }
+
+  .userTable tr {
+    display: flex;
+    /* Зробити рядки флекс-контейнерами */
+    flex-direction: column;
+    /* Вертикальне вирівнювання */
+    margin-bottom: 15px;
+    /* Пробіл між рядками */
+  }
+
+  .userTable td {
+    display: flex;
+    /* Зробити стовпці флекс-контейнерами */
+    justify-content: space-between;
+    /* Вирівняти текст */
+    padding: 8px;
+    /* Додати відступ */
+  }
+
+  .userTable td::before {
+    content: attr(data-label);
+    /* Додати заголовок перед значенням */
+    font-weight: var(--fw-med);
+    /* Виділити заголовок */
+    margin-right: 10px;
+    /* Пробіл між заголовком і значенням */
+  }
+}

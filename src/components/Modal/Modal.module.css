@@ -11,3 +11,13 @@
   justify-content: flex-end;
   gap: 20px;
 }
+
+@media (max-width: 800px) {
+  .form {
+    grid-template-columns: none;
+  }
+
+  .buttons {
+    justify-content: space-between;
+  }
+}

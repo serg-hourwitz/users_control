@@ -6,6 +6,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import DustBin from '../DustBin/DustBin';
+import styles from './Table.module.css';
 
 const BasicTable = ({ users, setUsers }) => {
   const deleteUser = (indexToDelete) => {
@@ -16,7 +17,11 @@ const BasicTable = ({ users, setUsers }) => {
 
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="user table">
+      <Table
+        className={styles.userTable}
+        // sx={{ minWidth: 650 }}
+        aria-label="user table"
+      >
         <TableHead>
           <TableRow>
             <TableCell
@@ -82,13 +87,15 @@ const BasicTable = ({ users, setUsers }) => {
             users.map((user, index) => (
               <TableRow key={index}>
                 <TableCell
-                  component="th"
+                  // component="th"
                   scope="row"
                   sx={{
                     fontFamily: 'var(--f-primary)',
-                    fontWeight: 'var(--fw - reg)',
+                    fontWeight: 'var(--fw-reg)',
                     fontSize: 'var(--fs-extra-small)',
+                    // Уникати пробілу в значеннях шрифтів
                   }}
+                  data-label="Full Name" // Додати атрибут для заголовка
                 >
                   {user.name}
                 </TableCell>
@@ -99,6 +106,7 @@ const BasicTable = ({ users, setUsers }) => {
                     fontWeight: 'var(--fw-light)',
                     fontSize: 'var(--fs-extra-small)',
                   }}
+                  data-label="Department" // Додати атрибут для заголовка
                 >
                   {user.department}
                 </TableCell>
@@ -109,6 +117,7 @@ const BasicTable = ({ users, setUsers }) => {
                     fontWeight: 'var(--fw-light)',
                     fontSize: 'var(--fs-extra-small)',
                   }}
+                  data-label="Country" // Додати атрибут для заголовка
                 >
                   {user.country}
                 </TableCell>
@@ -119,10 +128,13 @@ const BasicTable = ({ users, setUsers }) => {
                     fontWeight: 'var(--fw-light)',
                     fontSize: 'var(--fs-extra-small)',
                   }}
+                  data-label="Status" // Додати атрибут для заголовка
                 >
                   {user.status}
                 </TableCell>
-                <TableCell align="center">
+                <TableCell align="center" data-label="Actions">
+                  {' '}
+                  {/* Додати атрибут для заголовка */}
                   <DustBin onClick={() => deleteUser(index)} />
                 </TableCell>
               </TableRow>
