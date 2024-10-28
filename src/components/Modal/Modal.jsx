@@ -6,6 +6,8 @@ import Buttons from '../Buttons/Buttons';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
 import { useState } from 'react';
 import styles from './Modal.module.css';
 
@@ -14,7 +16,7 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  Width: 720,
+  width: 720,
   bgcolor: 'background.paper',
   border: '2px solid #000',
   boxShadow: 24,
@@ -59,6 +61,19 @@ const BasicModal = ({ open, handleClose, addUser }) => {
       aria-describedby="modal-modal-description"
     >
       <Box sx={style}>
+        <IconButton
+          aria-label="close"
+          onClick={handleClose}
+          sx={{
+            position: 'absolute',
+            top: 8,
+            right: 8,
+            color: 'grey.500',
+          }}
+        >
+          <CloseIcon />
+        </IconButton>
+
         <Typography
           id="modal-modal-title"
           variant="h6"
