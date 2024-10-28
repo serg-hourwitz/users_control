@@ -9,3 +9,10 @@
     margin: 0;
   }
 }
+
+@media (max-width: 500px) {
+  .buttons {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+  }
+}

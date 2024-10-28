@@ -14,6 +14,9 @@ const EditUsersButtons = ({ onUndo, onSave }) => {
           fontWeight: 'var(--fw-light)',
           textTransform: 'none',
           fontFamily: 'var(--f-primary)',
+          '@media (max-width: 500px)': {
+            width: 280,
+          },
         }}
         title="Undo"
         onClick={onUndo} // Attach the Undo handler
@@ -28,6 +31,9 @@ const EditUsersButtons = ({ onUndo, onSave }) => {
           fontWeight: 'var(--fw-light)',
           textTransform: 'none',
           fontFamily: 'var(--f-primary)',
+          '@media (max-width: 500px)': {
+            width: 280,
+          },
         }}
         title="Save"
         onClick={onSave} // Attach the Save handler

@@ -64,7 +64,11 @@ const Edit = () => {
             width: 500,
             m: 0,
             '@media (max-width: 1100px)': {
-              left: 'calc((100% - 500px) / 2)', // Apply this style only for max-width 1100px
+              left: 'calc((100% - 500px) / 2)',  
+            },
+            '@media (max-width: 500px)': {
+              maxWidth: 280,
+              left: 'calc((100% - 280px) / 2)', 
             },
           }}
           options={users.map((user) => ({
@@ -81,25 +85,38 @@ const Edit = () => {
         <h3 className={styles.subtitle}>User Information</h3>
         <div className={styles.info}>
           <Input
-            sx={{ width: 500, m: 0 }}
+            sx={{
+              width: 500, m: 0, '@media (max-width: 500px)': {
+              width: 280,
+            } }}
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
           <Department
             label="Department"
-            sx={{ width: 500, m: 0 }}
+            sx={{
+              width: 500, m: 0, '@media (max-width: 500px)': {
+                width: 0,
+                minWidth: 280,
+            } }}
             value={department}
             onChange={(e) => setDepartment(e.target.value)}
           />
           <Country
             label="Country"
-            sx={{ width: 500, m: 0 }}
+            sx={{ width: 500, m: 0, '@media (max-width: 500px)': {
+                width: 0,
+                minWidth: 280,
+            } }}
             value={country}
             onChange={(e) => setCountry(e.target.value)}
           />
           <Status
             label="Status"
-            sx={{ width: 500, m: 0 }}
+            sx={{ width: 500, m: 0, '@media (max-width: 500px)': {
+                width: 0,
+                minWidth: 280,
+            } }}
             value={status}
             onChange={(e) => setStatus(e.target.value)}
           />
